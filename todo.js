@@ -38,3 +38,16 @@ function add(content) {
 const command = process.argv[2];
 const arg = process.argv[3];
 
+function list() {
+    const todos = loadTodos();
+
+    if (todos.length == 0) {
+        console.log("Todo가 없습니다.");
+        return;
+    }
+
+    for (const todo of todos) {
+        const mark = todo.done ? "[x]" : "[]";
+        console.log(`${mark} ${todo.id}. ${todo.content}`);
+    }
+}
