@@ -34,3 +34,7 @@ function add(content) {
 
     console.log(`Todo가 추가되었습니다: ${content}`);
 }
+
+const command = process.argv[2];
+const arg = process.argv[3];
+
