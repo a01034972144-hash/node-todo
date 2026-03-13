@@ -51,3 +51,18 @@ function list() {
         console.log(`${mark} ${todo.id}. ${todo.content}`);
     }
 }
+
+function done(id) {
+    const todos = loadTodos();
+    const todo = todos.find(todo => todo.id === Number(id));
+
+    if (!todo) {
+        console.log("해당 ID를 찾을 수 없습니다.");
+        return;
+    }
+
+    todo.done = true;
+    saveTodos(todos);
+
+    console.log(`ID ${id}번 항목이 완료되었습니다.`);
+}
