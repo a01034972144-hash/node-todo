@@ -66,3 +66,11 @@ function done(id) {
 
     console.log(`ID ${id}번 항목이 완료되었습니다.`);
 }
+
+if (command === 'add') {
+    add(arg);
+} else if (command === 'list') {
+    list();
+} else if (command === 'done') {
+    done(arg);
+}
